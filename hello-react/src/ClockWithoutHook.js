@@ -1,11 +1,12 @@
 import { Component } from "react";
 
-class Clock extends Component {
+class ClockWithoutHook extends Component {
   constructor(props) {  
     super();
     // console.log(props); // { format: 'HH:mm:ss' }
     this.state = {
       now: new Date(),
+      format: 'HH:mm:ss',
     };
   }
   componentDidMount() {
@@ -19,11 +20,11 @@ class Clock extends Component {
     // console.log(this.props); // { format: 'HH:mm:ss' }
     const { now } = this.state;
     return (
-      <div className="Clock"> {/* React.createElement('div', { className: 'Clock' }, now.toLocaleTimeString()) */}
+      <div className="ClockWithoutHook"> {/* React.createElement('div', { className: 'Clock' }, now.toLocaleTimeString()) */}
         {now.toLocaleTimeString()}
       </div>
     ); 
   }
 }
 
-export default Clock;
+export default ClockWithoutHook;

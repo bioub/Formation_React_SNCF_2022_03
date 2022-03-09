@@ -1,0 +1,7 @@
+.Menu {
+  display: flex;
+  padding: 5px;
+  background-color: lightgray;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}

@@ -1,8 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Select.css';
 
 function Select({ options = [], defaultValue = '' }) {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener('click', () => {
+      
+    });
+  }, []);
 
   if (!options.length) {
     return null;

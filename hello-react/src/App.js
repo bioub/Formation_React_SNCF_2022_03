@@ -1,12 +1,16 @@
+import { useState } from "react";
 import ClockCustomHooks from "./ClockCustomHooks";
 import ClockWithHooks from "./ClockWithHooks";
 import ClockWithoutHook from "./ClockWithoutHook";
-import Counter from "./Counter";
+import CounterControlled from "./CounterControlled";
+import CounterUncontrolled from "./CounterUncontrolled";
 import Hello from "./Hello";
 import Select from "./Select";
+import UserForm from "./UserForm";
 
 function App() {
   const prenom = 'Titi';
+  const [count, setCount] = useState(10);
 
   return (
     <div className="App">
@@ -16,10 +20,16 @@ function App() {
       <ClockWithoutHook format="HH:mm:ss" />
       <ClockWithHooks format="HH:mm:ss" />
       <ClockCustomHooks format="HH:mm:ss"  /> 
-      <Counter />
-      <Counter />
-      <Counter />
+      <CounterUncontrolled />
+      <CounterUncontrolled />
+      <CounterUncontrolled />
       <Select options={['Chocolate', 'Strawberry', 'Vanilla']} defaultValue='Strawberry' />
+
+      <CounterControlled count={count} onIncrement={() => setCount(count + 1)} />
+      <CounterControlled count={count} onIncrement={() => setCount(count + 1)} />
+      <CounterControlled count={count} onIncrement={() => setCount(count + 1)} />
+
+      <UserForm />
     </div>
   );
 }
